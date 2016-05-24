@@ -2,6 +2,7 @@ package com.example.recyclerviewdome;
 
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -31,8 +32,9 @@ public class MainActivity extends ActionBarActivity {
         ButterKnife.bind(this);
         initData();
         //设置布局管理者用什么样的的管理方式，LayoutManager这个我们也可以自己定义
-        recyclerView.addItemDecoration(new DividerItemDecoration(this,DividerItemDecoration.VERTICAL_LIST));
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL_LIST));
+        // recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setLayoutManager(new GridLayoutManager(this,4));
         recyclerView.setAdapter(mAdapter = new HomeAdapter());
     }
 

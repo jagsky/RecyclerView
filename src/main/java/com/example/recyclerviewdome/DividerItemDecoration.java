@@ -22,7 +22,8 @@ public class DividerItemDecoration extends RecyclerView.ItemDecoration {
     private static final int[] ATTRS = new int[]{
             android.R.attr.listDivider
     };
-    //定义两个常量，分别用来表示线性布局的两个方向 LinearLayoutManager.HORIZONTAL;LinearLayoutManager.VERTICA
+    //定义两个常量，分别用来表示线性布局的两个方向 LinearLayoutManager.HORIZONTAL;
+    //                                         LinearLayoutManager.VERTICA
     public static final int HORIZONTAL_LIST = LinearLayoutManager.HORIZONTAL;
 
     public static final int VERTICAL_LIST = LinearLayoutManager.VERTICAL;

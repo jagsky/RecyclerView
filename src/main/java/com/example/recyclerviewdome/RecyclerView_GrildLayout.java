@@ -128,7 +128,7 @@ public class RecyclerView_GrildLayout extends RecyclerView.ItemDecoration {
 
     //判断是否是最后一行 pos表示下标 spanCount表示总个数
     private boolean isLastRaw(RecyclerView parent, int pos, int spanCount,
-                                    int childCount) {
+                              int childCount) {
         RecyclerView.LayoutManager layoutManager = parent.getLayoutManager();
         if (layoutManager instanceof GridLayoutManager) {
             //首先要获得最后一行的个数
@@ -162,8 +162,7 @@ public class RecyclerView_GrildLayout extends RecyclerView.ItemDecoration {
     //getItemOffsets中，outRect去设置了绘制的范围。onDraw中实现真正的绘制
     @Override
     public void getItemOffsets(Rect outRect, int itemPosition,
-                               RecyclerView parent)
-    {
+                               RecyclerView parent) {
         int spanCount = getSpanCount(parent);
         int childCount = parent.getAdapter().getItemCount();
         if (isLastRaw(parent, itemPosition, spanCount, childCount))// 如果是最后一行，则不需要绘制底部
@@ -172,8 +171,7 @@ public class RecyclerView_GrildLayout extends RecyclerView.ItemDecoration {
         } else if (isLastColum(parent, itemPosition, spanCount, childCount))// 如果是最后一列，则不需要绘制右边
         {
             outRect.set(0, 0, 0, mDivider.getIntrinsicHeight());
-        } else
-        {
+        } else {
             outRect.set(0, 0, mDivider.getIntrinsicWidth(),
                     mDivider.getIntrinsicHeight());
         }
